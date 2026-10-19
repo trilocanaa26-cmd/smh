@@ -1,6 +1,6 @@
 import type { Inquiry } from "@/lib/inquiry";
 
-const inquiryRecipient = "admin@testhospital.com";
+const inquiryRecipient = "trilocanaa26@gmail.com";
 
 export async function sendInquiryEmail(inquiry: Inquiry) {
   const apiKey = process.env.RESEND_API_KEY;
