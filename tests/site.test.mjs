@@ -4,6 +4,8 @@ import test from "node:test";
 import { doctors } from "../src/lib/doctors.ts";
 import {
   absoluteUrl,
+  additionalHospitalFacilities,
+  facilityDepartments,
   featuredServices,
   hospitalContact,
   hospitalName,
@@ -15,13 +17,42 @@ import {
 
 test("verified hospital identity and contact details are exact", () => {
   assert.equal(hospitalName, "Sai Multispeciality Hospital");
-  assert.equal(hospitalContact.address, "Govinda Market, Opposite Samarth Nagar, Shivaji Park, Pimple Gurav, New Sangvi, Pune – 411061");
+  assert.equal(hospitalContact.address, "First Floor, Govinda Market, Samarth Nagar, Opposite Shivaji Park, New Sangvi, Pune – 411027");
   assert.equal(hospitalContact.phone, "+91 93739 10945");
   assert.equal(hospitalContact.landline, "020-29992511");
   assert.equal(phoneHref(hospitalContact.phone), "tel:+919373910945");
   assert.equal(phoneHref(hospitalContact.landline), "tel:+912029992511");
   assert.equal("hours" in hospitalContact, false);
   assert.equal("emergencyContact" in hospitalContact, false);
+});
+
+test("facilities directory includes all supplied departments and hospital services", () => {
+  assert.equal(facilityDepartments.length, 17);
+  assert.deepEqual(
+    facilityDepartments.map(({ title }) => title),
+    [
+      "General & Laparoscopic Surgery",
+      "Laser Proctology",
+      "Varicose Vein Treatment",
+      "Endoscopy & Gastrointestinal Procedures",
+      "Paediatrics & Neonatal Care",
+      "Medicine Department",
+      "Obstetrics & Gynaecology",
+      "Urology",
+      "Oncosurgery",
+      "Paediatric Surgery",
+      "Plastic & Reconstructive Surgery",
+      "Orthopaedics",
+      "Arthroscopy",
+      "ENT (Ear, Nose & Throat)",
+      "Neurosurgery",
+      "Psychiatry",
+      "Laboratory & Diagnostic Services",
+    ],
+  );
+  assert.ok(facilityDepartments.every(({ services }) => services.length > 0));
+  assert.equal(additionalHospitalFacilities.length, 7);
+  assert.ok(additionalHospitalFacilities.includes("Cashless Treatment Facilities with Applicable Insurance/TPA Providers"));
 });
 
 test("directions use the verified complete address", () => {
@@ -69,7 +100,7 @@ test("hospital schema uses verified identity, phones and medical specialties", (
   assert.equal(organizationJsonLd["@type"], "Hospital");
   assert.equal(organizationJsonLd.name, hospitalName);
   assert.equal(organizationJsonLd.address.streetAddress, hospitalContact.address);
-  assert.equal(organizationJsonLd.address.postalCode, "411061");
+  assert.equal(organizationJsonLd.address.postalCode, "411027");
   assert.equal(organizationJsonLd.telephone, hospitalContact.phone);
   assert.equal(organizationJsonLd.contactPoint[1].telephone, "+912029992511");
   assert.deepEqual(organizationJsonLd.medicalSpecialty, [

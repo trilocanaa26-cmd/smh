@@ -10,7 +10,7 @@ export const serviceArea = [
 ];
 
 export const hospitalContact = {
-  address: "Govinda Market, Opposite Samarth Nagar, Shivaji Park, Pimple Gurav, New Sangvi, Pune – 411061",
+  address: "First Floor, Govinda Market, Samarth Nagar, Opposite Shivaji Park, New Sangvi, Pune – 411027",
   phone: "+91 93739 10945",
   landline: "020-29992511",
   email: "info@sangavi-hospital.com",
@@ -147,6 +147,176 @@ export const services = [
 
 export const featuredServices = services.slice(0, 4);
 
+export const facilityDepartments = [
+  {
+    title: "General & Laparoscopic Surgery",
+    services: [
+      "General Surgical Procedures",
+      "Laparoscopic (Keyhole) Surgery",
+      "Hernia Surgery – Inguinal, Incisional & Umbilical",
+      "Appendix Surgery",
+      "Gallbladder Surgery",
+      "Breast Surgery",
+      "Hydrocele & Circumcision Procedures",
+      "Minor & Major Surgical Procedures",
+    ],
+  },
+  {
+    title: "Laser Proctology",
+    services: [
+      "Laser Treatment for Piles (Haemorrhoids)",
+      "Fissure-in-Ano Treatment",
+      "Fistula-in-Ano Treatment",
+      "Pilonidal Sinus Treatment",
+      "Perianal Abscess Management",
+    ],
+  },
+  {
+    title: "Varicose Vein Treatment",
+    services: [
+      "Laser Treatment for Varicose Veins",
+      "Evaluation and Management of Venous Disorders",
+      "Surgical Treatment of Varicose Veins",
+    ],
+  },
+  {
+    title: "Endoscopy & Gastrointestinal Procedures",
+    services: [
+      "Upper GI Endoscopy",
+      "Colonoscopy",
+      "Diagnostic Endoscopic Procedures",
+      "Evaluation of Gastrointestinal Disorders",
+    ],
+  },
+  {
+    title: "Paediatrics & Neonatal Care",
+    services: [
+      "Paediatric Consultation",
+      "Newborn & Child Healthcare",
+      "Management of Childhood Illnesses",
+      "Growth and Development Monitoring",
+      "Vaccination & Immunisation Centre",
+    ],
+  },
+  {
+    title: "Medicine Department",
+    services: [
+      "General Medicine Consultation",
+      "Diabetes Management",
+      "Hypertension Management",
+      "Asthma & Respiratory Disorders",
+      "Fever and Infectious Diseases",
+      "Medical Management of Common Illnesses",
+    ],
+  },
+  {
+    title: "Obstetrics & Gynaecology",
+    services: [
+      "Antenatal & Postnatal Care",
+      "Normal Delivery",
+      "Caesarean Section",
+      "Family Planning Procedures",
+      "Gynaecological Surgeries",
+      "Uterine Surgery and Related Procedures",
+    ],
+  },
+  {
+    title: "Urology",
+    services: [
+      "Evaluation of Urinary Tract Disorders",
+      "Kidney & Urinary Stone Management",
+      "Prostate Disorders",
+      "Surgical Management of Urological Conditions",
+    ],
+  },
+  {
+    title: "Oncosurgery",
+    services: [
+      "Surgical Management of Selected Cancers",
+      "Breast and Other Oncological Procedures",
+      "Cancer Surgery Consultation and Evaluation",
+    ],
+  },
+  {
+    title: "Paediatric Surgery",
+    services: [
+      "Surgical Evaluation of Congenital Conditions",
+      "Selected Childhood Surgical Procedures",
+      "Management of Common Paediatric Surgical Conditions",
+    ],
+  },
+  {
+    title: "Plastic & Reconstructive Surgery",
+    services: [
+      "Wound Management",
+      "Selected Reconstructive Procedures",
+      "Scar and Soft-Tissue Procedures",
+      "Surgical Management of Selected Soft-Tissue Defects",
+    ],
+  },
+  {
+    title: "Orthopaedics",
+    services: [
+      "Fracture Management",
+      "Trauma Care",
+      "Joint and Bone Disorders",
+      "Orthopaedic Surgical Procedures",
+      "Spine-Related Orthopaedic Care",
+    ],
+  },
+  {
+    title: "Arthroscopy",
+    services: [
+      "Arthroscopic Evaluation and Procedures",
+      "Selected Knee and Shoulder Procedures",
+      "Sports-Related Joint Injury Management",
+    ],
+  },
+  {
+    title: "ENT (Ear, Nose & Throat)",
+    services: [
+      "Ear, Nose & Throat Consultation",
+      "Evaluation of ENT Disorders",
+      "Selected ENT Surgical Procedures",
+    ],
+  },
+  {
+    title: "Neurosurgery",
+    services: [
+      "Neurosurgical Consultation",
+      "Evaluation of Brain and Spinal Disorders",
+      "Selected Neurosurgical Procedures",
+    ],
+  },
+  {
+    title: "Psychiatry",
+    services: [
+      "Psychiatric Consultation",
+      "Assessment and Management of Mental Health Conditions",
+      "De-addiction and Related Psychiatric Care",
+    ],
+  },
+  {
+    title: "Laboratory & Diagnostic Services",
+    services: [
+      "Routine Blood Investigations",
+      "Urine and Stool Investigations",
+      "Biochemistry & Haematology Tests",
+      "Other Investigations as Available",
+    ],
+  },
+] as const;
+
+export const additionalHospitalFacilities = [
+  "Inpatient Admission Facilities",
+  "Emergency Evaluation and Treatment",
+  "Preoperative & Postoperative Care",
+  "Anaesthesia Services",
+  "Nursing Care",
+  "Health Check-ups",
+  "Cashless Treatment Facilities with Applicable Insurance/TPA Providers",
+] as const;
+
 export const faqs = [
   {
     question: "How can I enquire about an appointment?",
@@ -156,7 +326,7 @@ export const faqs = [
   {
     question: "Which specialties are available at Sai Multispeciality Hospital?",
     answer:
-      "Our specialties are Paediatrics, General Surgery, Endoscopic Surgery and Laparoscopic Surgery. Dr. Neha Naik provides paediatric care, and Dr. Suresh Naik provides surgical care in Pimple Gurav, New Sangvi, Pune.",
+      "The Facilities page lists our departments, specialties and hospital services. Please contact the hospital to confirm current availability and clinician schedules.",
   },
   {
     question: "Can I use the contact form for a medical emergency?",
@@ -175,7 +345,7 @@ export const organizationJsonLd = {
   "@type": "Hospital",
   name: hospitalName,
   description:
-    "Paediatrics, General Surgery, Endoscopic Surgery and Laparoscopic Surgery in Pimple Gurav, New Sangvi, Pune.",
+    "Multispeciality hospital care in New Sangvi, Pune, including surgical, medical, paediatric, maternity, diagnostic and inpatient services.",
   "@id": `${siteUrl}/#hospital`,
   url: siteUrl,
   areaServed: serviceArea.map((name) => ({
@@ -188,7 +358,7 @@ export const organizationJsonLd = {
     addressLocality: "Pune",
     addressRegion: "Maharashtra",
     addressCountry: "IN",
-    postalCode: "411061",
+    postalCode: "411027",
   },
   telephone: hospitalContact.phone,
   contactPoint: [

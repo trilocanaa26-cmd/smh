@@ -4,9 +4,9 @@ import { ContactForm } from "@/components/contact-form";
 import { absoluteUrl, hospitalContact, hospitalName, mapSearchUrl, phoneHref, siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Contact & Appointments in Pimple Gurav, Pune",
+  title: "Contact & Appointments in New Sangvi, Pune",
   description:
-    "Book a paediatric or surgical consultation at Sai Multispeciality Hospital, Govinda Market, Pimple Gurav, New Sangvi, Pune 411061. Call +91 93739 10945 or 020-29992511.",
+    "Contact Sai Multispeciality Hospital, First Floor, Govinda Market, Samarth Nagar, New Sangvi, Pune 411027. Call +91 93739 10945 or 020-29992511.",
   alternates: { canonical: absoluteUrl("/contact") },
   openGraph: {
     title: "Contact Sai Multispeciality Hospital",
@@ -51,7 +51,7 @@ export default function ContactPage() {
         <iframe
           className="contact-map-frame"
           src={`https://maps.google.com/maps?q=${encodeURIComponent(hospitalContact.address)}&z=14&output=embed`}
-          title="Sai Multispeciality Hospital, Govinda Market, Pimple Gurav, New Sangvi, Pune"
+          title={`Sai Multispeciality Hospital, ${hospitalContact.address}`}
           loading="lazy"
           referrerPolicy="strict-origin-when-cross-origin"
         />

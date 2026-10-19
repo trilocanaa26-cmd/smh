@@ -74,9 +74,9 @@ export default function Home() {
 
       <section className="services-section section-pad" id="services">
         <div className="container">
-          <div className="section-topline"><SectionHeading eyebrow="Our medical specialties" title="Focused care. Personal attention." description="Child healthcare and surgical consultations, with treatment decisions guided by your individual needs." /><Link className="text-link desktop-link" href="/services">View our specialties <span aria-hidden="true">↗</span></Link></div>
+          <div className="section-topline"><SectionHeading eyebrow="Featured medical specialties" title="Focused care. Personal attention." description="Child healthcare and surgical consultations, with treatment decisions guided by your individual needs." /><Link className="text-link desktop-link" href="/services">View our specialties <span aria-hidden="true">↗</span></Link></div>
           <div className="service-grid specialty-grid">{featuredServices.map((service) => <ServiceCard key={service.slug} service={service} />)}</div>
-          <Link className="text-link mobile-link" href="/services">View all services <span aria-hidden="true">↗</span></Link>
+          <Link className="text-link mobile-link" href="/facilities">View all facilities and specialties <span aria-hidden="true">↗</span></Link>
         </div>
       </section>
 

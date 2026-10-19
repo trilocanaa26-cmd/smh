@@ -244,6 +244,14 @@ h1 em, h2 em { color: var(--primary); font-weight: 400; }
 .value-card span, .facility-card span { color: var(--primary); font-size: 11px; font-weight: 700; letter-spacing: .1em; }
 .value-card h3, .facility-card h3, .detail-service-card h3 { margin: 15px 0 8px; font-family: var(--serif); font-size: 21px; font-weight: 400; }
 .value-card p, .facility-card p, .detail-service-card p { margin: 0; color: var(--body); font-size: 12px; line-height: 1.8; }
+.facility-services { margin: 0; padding-left: 18px; color: var(--body); font-size: 12px; line-height: 1.8; }
+.facility-services li + li { margin-top: 4px; }
+.additional-facilities { background: var(--surface); }
+.additional-facility-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 28px; margin: 26px 0 0; padding: 0; list-style: none; }
+.additional-facility-list li { padding: 15px 18px; border: 1px solid var(--line); background: var(--paper); color: var(--body); font-size: 13px; }
+.facility-contact-address { margin-top: 16px; color: #e8f3ff; font-size: 13px; line-height: 1.8; }
+.facility-contact-phones { margin: 8px 0 0; font-size: 13px; font-weight: 700; }
+.facility-contact-phones a { color: white; }
 .detail-service-card a { display: inline-block; margin-top: 15px; color: var(--primary); font-size: 12px; font-weight: 700; }
 .service-detail { max-width: 800px; }
 .service-detail .button { margin-top: 18px; }
@@ -395,6 +403,7 @@ address { font-style: normal; overflow-wrap: anywhere; }
   .prose-section { padding-block: 48px 72px; }
   .prose-grid { grid-template-columns: 1fr; gap: 20px; }
   .values-grid, .facility-grid, .detail-service-grid { grid-template-columns: 1fr; }
+  .additional-facility-list { grid-template-columns: 1fr; }
   .contact-page-grid { grid-template-columns: 1fr; gap: 35px; padding-block: 48px 70px; }
   .contact-map-section { padding-bottom: 60px; }
   .map-frame-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
