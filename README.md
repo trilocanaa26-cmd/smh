@@ -31,7 +31,7 @@ Set the integration variables below before submitting the contact form. The form
 1. Create a Resend account and verify a sending domain.
 2. Create an API key and set `RESEND_API_KEY`.
 3. Set `CONTACT_FROM_EMAIL` to an address on the verified domain.
-4. Submissions go to `admin@testhospital.com` by default. Set `CONTACT_TO_EMAIL` to override the receiving address.
+4. Submissions go to `trilocanaa26@gmail.com` by default. Set `CONTACT_TO_EMAIL` to override the receiving address. Multiple recipients are supported as a comma-separated list (`first@example.com,second@example.com`) or a JSON array (`["first@example.com","second@example.com"]`).
 
 #### Testing without a domain
 

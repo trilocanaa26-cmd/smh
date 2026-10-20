@@ -2,10 +2,38 @@ import type { Inquiry } from "@/lib/inquiry";
 
 const inquiryRecipient = "trilocanaa26@gmail.com";
 
+function getInquiryRecipients() {
+  const setting = process.env.CONTACT_TO_EMAIL?.trim();
+  if (!setting) return [inquiryRecipient];
+
+  let recipients: string[];
+  if (setting.startsWith("[")) {
+    let parsed: unknown;
+    try {
+      parsed = JSON.parse(setting);
+    } catch {
+      throw new Error("CONTACT_TO_EMAIL must be a valid JSON array or comma-separated list");
+    }
+    if (!Array.isArray(parsed) || !parsed.every((recipient) => typeof recipient === "string")) {
+      throw new Error("CONTACT_TO_EMAIL JSON value must be an array of email addresses");
+    }
+    recipients = parsed;
+  } else {
+    recipients = setting.split(",");
+  }
+
+  const normalizedRecipients = recipients.map((recipient) => recipient.trim());
+  if (normalizedRecipients.length === 0 || normalizedRecipients.some((recipient) => !recipient)) {
+    throw new Error("CONTACT_TO_EMAIL must contain one or more non-empty email addresses");
+  }
+
+  return normalizedRecipients;
+}
+
 export async function sendInquiryEmail(inquiry: Inquiry) {
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.CONTACT_FROM_EMAIL;
-  const to = process.env.CONTACT_TO_EMAIL || inquiryRecipient;
+  const to = getInquiryRecipients();
   if (!apiKey || !from) throw new Error("Email delivery is not configured");
 
   const response = await fetch("https://api.resend.com/emails", {
@@ -16,7 +44,7 @@ export async function sendInquiryEmail(inquiry: Inquiry) {
     },
     body: JSON.stringify({
       from,
-      to: [to],
+      to,
       reply_to: inquiry.email,
       subject: `Website enquiry: ${inquiry.subject}`,
       text: [
