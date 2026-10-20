@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { organizationJsonLd, siteUrl } from "@/lib/site";
@@ -50,6 +51,7 @@ export default function RootLayout({
             __html: JSON.stringify(organizationJsonLd).replace(/</g, "\\u003c"),
           }}
         />
+        <Analytics />
       </body>
     </html>
   );
